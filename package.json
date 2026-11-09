@@ -1,0 +1,64 @@
+{
+  "name": "dsh-portable",
+  "version": "0.1.0",
+  "description": "Export and import a complete DeepSeek Harness home (settings, session history, attachments, scheduled tasks) as one archive, with a safe cold restore.",
+  "license": "MIT",
+  "author": "breeeew",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/breeeew/dsh-portable.git"
+  },
+  "homepage": "https://github.com/breeeew/dsh-portable#readme",
+  "bugs": {
+    "url": "https://github.com/breeeew/dsh-portable/issues"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "lib/archive.js",
+    "lib/home.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "locale/*.json",
+    "README.md",
+    "README.ru.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.2.2-rc.1"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "bundle",
+    "backup",
+    "migration",
+    "portable"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ],
+      "platform": "web"
+    }
+  }
+}

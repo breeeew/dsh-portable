@@ -1,0 +1,11 @@
+# dsh-portable bundle layer.
+#
+# The package is both the bundle (this patch) and the plugin it mounts: the
+# patch inserts one host row whose module is this package's `main`, and the
+# Web client picks up `./client` through the package.json `dsh.client`
+# declaration. Keeping both halves in one package means the bundle installs
+# from a single git spec.
+- insert:
+    - id: portable
+      name: dsh-portable
+      config: {}

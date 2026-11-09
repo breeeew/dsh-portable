@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Portable",
+    "description": "Export the whole DSH home as one archive and restore it on another computer with a safe cold swap and an automatic backup.",
+    "detail": "README.md"
+  }
+}
